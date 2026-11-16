@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Racismo no Trabalho</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+   <header>   
+       <!-- Barra de Navegação limpa estilo CSSDA -->
+       <nav class="navbar">
+           <!-- Espaçador invisível na esquerda para empurrar o título exatamente para o centro -->
+           <div class="nav-left" style="width: 110px; visibility: hidden;"></div>
+           
+           <!-- Nome centralizado -->
+           <div class="nav-center">
+               <a href="#home" class="logo">Grupo 23</a>
+           </div>
+           
+           <!-- Botão na direita -->
+           <div class="nav-right" style="width: 110px; text-align: right;">
+               <a href="#video" class="nav-btn">VIDEO</a>
+           </div>
+       </nav>
+
+   </header>
+
+   <main class="container">
+       <!-- Espaço das DIVs informativas e clicáveis (Balões) -->
+       <section id="informativos" class="card-section">
+           <div class="info-card" onclick="aoClicarCard(1)">
+               <h2>Importância da igualdade profissional:</h2>
+               <p> Promover a igualdade profissional é fundamental não apenas por reparação histórica e justiça social, mas também por sobrevivência econômica. Empresas com times diversos são mais inovadoras, tomam decisões melhores e geram maior retorno financeiro, transformando a equidade racial em um pilar indispensável para o desenvolvimento de toda a sociedade.</p>
+           </div>
+
+           <div class="info-card" onclick="aoClicarCard(2)">
+               <h2>Desigualdade de oportunidades:</h2>
+               <p>A desigualdade de oportunidades começa antes mesmo da entrada no mercado, refletindo disparidades históricas no acesso à educação de qualidade, cursos de idiomas e redes de contatos (networking). Profissionais negros muitas vezes iniciam a carreira em desvantagem socioeconômica, o que cria um ponto de partida desigual que se perpetua ao longo da vida profissional.
+</p>
+           </div>
+
+           <div class="info-card" onclick="aoClicarCard(3)">
+               <h2>Racismo no mercado de trabalho:</h2>
+               <p>O racismo no mercado de trabalho se manifesta desde o viés inconsciente em processos seletivos até
+                a precarização das condições de trabalho de profissionais negros. Estatísticas do IBGE comprovam que a
+                população negra enfrenta maiores taxas de desemprego, maior informalidade e barreiras invisíveis na
+                contratação, evidenciando como o racismo estrutural limita o acesso e a permanência dessas pessoas no ambiente corporativo.</p>
+           </div>
+       </section>
+
+       <!-- Segundo espaço dedicado ao áudio do grupo -->
+       <section id="audio" class="audio-section">
+           <h2>🎙️ Espaço do Áudio do Grupo</h2>
+           <p>Ouça abaixo a gravação explicativa que preparamos para este projeto:</p>
+          
+           <!-- Substitua o "seu-audio.mp3" pelo nome real do arquivo de áudio do seu grupo -->
+           <audio controls>
+               <source src="seu-audio.mp3" type="audio/mpeg">
+           </audio>
+       </section>
+   </main>
+
+   <footer>
+       <p>&copy; 2026 - Desenvolvido pelo Nosso Grupo</p>
+   </footer>
+
+   <script src="script.js"></script>
+</body>
+</html>

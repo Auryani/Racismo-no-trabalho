@@ -1,0 +1,236 @@
+/* ---- CONFIGURAÇÕES GERAIS E CORES ---- */
+body {
+   background-color: #240037;
+   color: #f4eaea; /* Texto branco */
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   padding-top: 90px; /* Ajustado para alinhar perfeitamente com a altura da navbar */
+}
+
+/* ---- MENU FIXO COM DEGRADÊ EM SCROLL ---- */
+.navbar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 90px;
+   background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0) 100%);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 40px;
+   box-sizing: border-box;
+   z-index: 1000;
+}
+
+/* Logotipo / Nome esquerdo */
+.navbar .logo {
+   color: #FFFFFF;
+   font-weight: bold;
+   font-size: 1.2rem;
+   text-decoration: none;
+   letter-spacing: 2px;
+}
+
+/* Links centrais */
+.nav-links {
+   list-style: none;
+   display: flex;
+   gap: 30px;
+   margin: 0;
+   padding: 0;
+}
+
+.nav-links a {
+   color: #B0B0B0; 
+   text-decoration: none;
+   font-size: 0.85rem;
+   font-weight: 600;
+   letter-spacing: 1.5px;
+   transition: color 0.2s ease;
+}
+
+/* Hover dos links centrais */
+.nav-links a:hover {
+   color: #D4C5B9; /* Acende em Bege */
+}
+
+/* Botão de ação direito (Estilo botão Submit) */
+.nav-btn {
+   color: #000000 !important;
+   background-color: #D4C5B9; /* Fundo Bege */
+   text-decoration: none;
+   font-size: 0.8rem;
+   font-weight: bold;
+   letter-spacing: 1px;
+   padding: 10px 20px;
+   border-radius: 4px;
+   transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+   background-color: #FFFFFF; /* Muda para branco no hover */
+   transform: translateY(-1px);
+}
+
+
+.header-banner h1 {
+   color: #D4C5B9; /* Título Bege */
+   margin: 0 0 10px 0;
+   font-size: 2.5rem;
+   letter-spacing: 1px;
+}
+
+.header-banner p {
+   color: #e9dede;
+   font-size: 1.1rem;
+}
+
+/* ---- CORPO PRINCIPAL E CARDS ---- */
+.container {
+   flex: 1;
+   max-width: 1000px;
+   margin: 0 auto;
+   padding: 40px 20px;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+/* Grid das Divs Informativas (Balões de Conversa) */
+.card-section {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 30px; /* Espaço para as pontas dos balões */
+   margin-bottom: 60px;
+}
+
+.info-card {
+   position: relative; /* Base para o posicionamento da ponta do balão */
+   background-color: #1A1A1A; /* Grafite escuro */
+   border: 1px solid #D4C5B9; /* Borda Bege */
+   border-radius: 16px; /* Cantos arredondados estilo balão */
+   padding: 25px;
+   cursor: pointer;
+   transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+/* Ponta interna do balão */
+.info-card::after {
+   content: "";
+   position: absolute;
+   bottom: -12px;
+   left: 30px;
+   border-width: 12px 12px 0;
+   border-style: solid;
+   border-color: #1A1A1A transparent;
+   display: block;
+   width: 0;
+   transition: border-color 0.2s; /* Transição suave junto com o card */
+}
+
+/* Bordinha bege da ponta do balão */
+.info-card::before {
+   content: "";
+   position: absolute;
+   bottom: -14px;
+   left: 29px;
+   border-width: 13px 13px 0;
+   border-style: solid;
+   border-color: #D4C5B9 transparent;
+   display: block;
+   width: 0;
+}
+
+/* Hover nos balões */
+.info-card:hover {
+   transform: translateY(-5px);
+   background-color: #242424; /* Fundo clareia um pouco */
+   box-shadow: 0 5px 15px rgba(212, 197, 185, 0.2); /* Brilho sutil bege */
+}
+
+/* Corrigido: Atualiza a ponta interna do balão no hover para acompanhar o fundo */
+.info-card:hover::after {
+   border-color: #242424 transparent;
+}
+
+.info-card h2 {
+   color: #D4C5B9; /* Título interno Bege */
+   margin-top: 0;
+   font-size: 1.3rem;
+}
+
+.info-card p {
+   color: #FFFFFF; /* Texto interno Branco */
+   line-height: 1.5;
+   margin-bottom: 0;
+}
+
+/* ---- SEÇÃO DE ÁUDIO REFINADA ---- */
+.audio-section {
+   background-color: #151515; /* Fundo grafite profundo */
+   border: 1px solid rgba(212, 197, 185, 0.3); /* Linha fina e elegante */
+   border-radius: 16px;
+   padding: 35px 20px;
+   text-align: center;
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 
+               0 0 15px rgba(212, 197, 185, 0.05); /* Brilho sutil de fundo */
+   transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover na área de áudio */
+.audio-section:hover {
+   border-color: #D4C5B9; /* Acende a borda em bege */
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 
+               0 0 25px rgba(212, 197, 185, 0.15); /* Intensifica o brilho */
+}
+
+.audio-section h2 {
+   color: #D4C5B9;
+   font-size: 1.4rem;
+   margin-top: 0;
+   margin-bottom: 10px;
+}
+
+.audio-section p {
+   color: #B0B0B0; /* Texto cinza claro */
+   font-size: 0.95rem;
+   margin-bottom: 20px;
+}
+
+/* Customização básica do player */
+audio {
+   width: 100%;
+   max-width: 550px;
+   height: 45px;
+   border-radius: 30px;
+   background-color: #222222;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- RODAPÉ ---- */
+footer {
+   text-align: center;
+   padding: 20px;
+   background-color: #0D0D0D; /* Quase preto */
+   border-top: 1px solid #D4C5B9;
+   color: #FFFFFF;
+   font-size: 0.9rem;
+}
+
+/* ---- RESPONSIVIDADE EM CELULARES ---- */
+@media (max-width: 768px) {
+   .navbar {
+       padding: 0 20px;
+   }
+   /* Corrigido: Seletor alterado para esconder a classe correta (.nav-links) */
+   .nav-links {
+       display: none; 
+   }
+   .header-banner h1 {
+       font-size: 2rem;
+   }
+}
