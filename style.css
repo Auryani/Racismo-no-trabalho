@@ -1,6 +1,8 @@
 /* ---- CONFIGURAÇÕES GERAIS E CORES ---- */
 body {
-   background-color: #240037;
+   /* Degradê marrom que escurece conforme a rolagem da página */
+   background: linear-gradient(180deg, #3B2618 0%, #24160D 45%, #120A06 80%, #080402 100%);
+   background-color: #120A06; /* Cor de reserva */
    color: #f4eaea; /* Texto branco */
    font-family: Arial, sans-serif;
    margin: 0;
@@ -77,6 +79,11 @@ body {
    transform: translateY(-1px);
 }
 
+/* ---- BANNER / CABEÇALHO ---- */
+.header-banner {
+   text-align: center;
+   margin-bottom: 50px;
+}
 
 .header-banner h1 {
    color: #D4C5B9; /* Título Bege */
@@ -103,14 +110,14 @@ body {
 /* Grid das Divs Informativas (Balões de Conversa) */
 .card-section {
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   gap: 30px; /* Espaço para as pontas dos balões */
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 38px 30px; /* 38px vertical (para caber a ponta do balão) e 30px horizontal */
    margin-bottom: 60px;
 }
 
 .info-card {
    position: relative; /* Base para o posicionamento da ponta do balão */
-   background-color: #1A1A1A; /* Grafite escuro */
+   background-color: #1A1410; /* Grafite com toque quente marrom */
    border: 1px solid #D4C5B9; /* Borda Bege */
    border-radius: 16px; /* Cantos arredondados estilo balão */
    padding: 25px;
@@ -118,7 +125,7 @@ body {
    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 
-/* Ponta interna do balão */
+/* Ponta interna do balão (Esquerda - padrão) */
 .info-card::after {
    content: "";
    position: absolute;
@@ -126,13 +133,13 @@ body {
    left: 30px;
    border-width: 12px 12px 0;
    border-style: solid;
-   border-color: #1A1A1A transparent;
+   border-color: #1A1410 transparent;
    display: block;
    width: 0;
-   transition: border-color 0.2s; /* Transição suave junto com o card */
+   transition: border-color 0.2s;
 }
 
-/* Bordinha bege da ponta do balão */
+/* Bordinha bege da ponta do balão (Esquerda - padrão) */
 .info-card::before {
    content: "";
    position: absolute;
@@ -145,16 +152,27 @@ body {
    width: 0;
 }
 
+/* Variação opcional: Ponta do balão à direita (para os 2 novos balões, se quiser) */
+.info-card.right::after {
+   left: auto;
+   right: 30px;
+}
+
+.info-card.right::before {
+   left: auto;
+   right: 29px;
+}
+
 /* Hover nos balões */
 .info-card:hover {
    transform: translateY(-5px);
-   background-color: #242424; /* Fundo clareia um pouco */
-   box-shadow: 0 5px 15px rgba(212, 197, 185, 0.2); /* Brilho sutil bege */
+   background-color: #261D17; /* Fundo clareia num marrom escuro suave */
+   box-shadow: 0 5px 15px rgba(212, 197, 185, 0.2);
 }
 
-/* Corrigido: Atualiza a ponta interna do balão no hover para acompanhar o fundo */
+/* Atualiza a ponta interna do balão no hover para acompanhar o fundo */
 .info-card:hover::after {
-   border-color: #242424 transparent;
+   border-color: #261D17 transparent;
 }
 
 .info-card h2 {
@@ -171,21 +189,21 @@ body {
 
 /* ---- SEÇÃO DE ÁUDIO REFINADA ---- */
 .audio-section {
-   background-color: #151515; /* Fundo grafite profundo */
-   border: 1px solid rgba(212, 197, 185, 0.3); /* Linha fina e elegante */
+   background-color: #140F0C; /* Fundo grafite amarronzado profundo */
+   border: 1px solid rgba(212, 197, 185, 0.3);
    border-radius: 16px;
    padding: 35px 20px;
    text-align: center;
-   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 
-               0 0 15px rgba(212, 197, 185, 0.05); /* Brilho sutil de fundo */
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 
+               0 0 15px rgba(212, 197, 185, 0.05);
    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 /* Hover na área de áudio */
 .audio-section:hover {
-   border-color: #D4C5B9; /* Acende a borda em bege */
-   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 
-               0 0 25px rgba(212, 197, 185, 0.15); /* Intensifica o brilho */
+   border-color: #D4C5B9;
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 
+               0 0 25px rgba(212, 197, 185, 0.15);
 }
 
 .audio-section h2 {
@@ -196,7 +214,7 @@ body {
 }
 
 .audio-section p {
-   color: #B0B0B0; /* Texto cinza claro */
+   color: #B0B0B0;
    font-size: 0.95rem;
    margin-bottom: 20px;
 }
@@ -209,13 +227,14 @@ audio {
    border-radius: 30px;
    background-color: #222222;
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+   color-scheme: dark;
 }
 
 /* ---- RODAPÉ ---- */
 footer {
    text-align: center;
    padding: 20px;
-   background-color: #0D0D0D; /* Quase preto */
+   background-color: #080402; /* Preto amarronzado bem escuro */
    border-top: 1px solid #D4C5B9;
    color: #FFFFFF;
    font-size: 0.9rem;
@@ -226,11 +245,13 @@ footer {
    .navbar {
        padding: 0 20px;
    }
-   /* Corrigido: Seletor alterado para esconder a classe correta (.nav-links) */
    .nav-links {
        display: none; 
    }
    .header-banner h1 {
        font-size: 2rem;
+   }
+   .card-section {
+       gap: 40px;
    }
 }
