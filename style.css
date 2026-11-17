@@ -29,7 +29,7 @@ body {
    z-index: 1000;
 }
 
-/* Logotipo / Nome esquerdo */
+/* Logotipo / Nome centralizado */
 .navbar .logo {
    color: #FFFFFF;
    font-weight: bold;
@@ -71,6 +71,8 @@ body {
    letter-spacing: 1px;
    padding: 10px 20px;
    border-radius: 4px;
+   white-space: nowrap; /* Impede que a palavra INFORMAÇÕES quebre linha */
+   display: inline-block;
    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -244,6 +246,9 @@ footer {
 @media (max-width: 768px) {
    .navbar {
        padding: 0 20px;
+   }
+   .nav-left {
+       display: none; /* Libera espaço no celular para o título e o botão */
    }
    .nav-links {
        display: none; 
